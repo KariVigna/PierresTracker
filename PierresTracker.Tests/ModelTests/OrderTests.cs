@@ -40,5 +40,16 @@ namespace PierresTracker.Tests
             List<Order> result = Order.GetAll();
             CollectionAssert.AreEqual(newList, result);
         }
+
+        [TestMethod]
+        public void Find_ReturnsCorrectItem_Item()
+        {
+            string description1 = "Cookies";
+            string description2 = "Bagels";
+            Order newOrder1 = new Order(description1);
+            Order newOrder2 = new Order(description2);
+            Order result = Order.Find(2);
+            Assert.AreEqual(newOrder2, result);
+        }
     }
 }
