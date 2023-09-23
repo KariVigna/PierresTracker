@@ -6,14 +6,37 @@ using System;
 namespace PierresTracker.Tests
 {
     [TestClass]
-    public class VendorTests
+    public class VendorTests : IDisposable
     {
-
+        public void Dispose()
+        {
+            Vendor.ClearAll();
+        }
+        
         [TestMethod]
         public void VendorConstructor_CreatesInstanceOfVendor_Vendor()
         {
             Vendor newVendor = new Vendor("Suzie's Cafe");
             Assert.AreEqual(typeof(Vendor), newVendor.GetType());
+        }
+
+        [TestMethod]
+        public void GetName_ReturnsVendorName_String()
+        {
+            string name = "Suzie's Cafe";
+            Vendor newVendor = new Vendor(name);
+            string result = newVendor.Name;
+            Assert.AreEqual(name, result);
+        }
+
+        [TestMethod]
+        public void GetId_ReturnsVendorId_Int()
+        {
+            string name = "Suzie's Cafe";
+            Vendor newVendor = new Vendor(name);
+            int result = newVendor.Id;
+            Assert.AreEqual(1, result);
+            
         }
     }
 }
