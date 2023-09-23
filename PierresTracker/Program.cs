@@ -5,7 +5,7 @@ namespace PierresTracker
 {
   class Program
   {
-    static void Main(string[] args)
+    public static void Main(string[] args)
     {
       WebApplicationBuilder builder = WebApplication.CreateBuilder(args);
 
@@ -14,7 +14,9 @@ namespace PierresTracker
       WebApplication app = builder.Build();
 
       app.UseHttpsRedirection();
+
       app.UseStaticFiles();
+      
       app.UseRouting();
 
       app.MapControllerRoute(
