@@ -4,23 +4,16 @@ using System.Collections.Generic;
 
 namespace PierresTracker.Controllers
 {
-    public class OrdersController : Controller
+    public class OrderController : Controller
     {
         [HttpGet("/vendors/{vendorId}/orders/new")]
         public ActionResult New(int vendorId)
         {
-        Vendor vendor = Vendor.Find(vendorId);
-        return View(vendor);
-  }
+            Vendor vendor = Vendor.Find(vendorId);
+            return View(vendor);
+        }
 
-        // [HttpPost("/orders/delete")]
-        // public ActionResult DeleteAll()
-        // {
-        //     Order.ClearAll();
-        //     return View();
-        // }
-
-        [HttpGet("/vendors/{vendorId}/order/{orderId}")]
+        [HttpGet("/vendors/{vendorId}/orders/{orderId}")]
         public ActionResult Show(int vendorId, int orderId)
         {
             Order order = Order.Find(orderId);

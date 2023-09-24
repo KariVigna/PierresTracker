@@ -5,17 +5,17 @@ using PierresTracker.Models;
 
 namespace PierresTracker.Controllers
 {
-  public class VendorController : Controller
-  {
+public class VendorController : Controller
+{
 
     [HttpGet("/vendors")]
     public ActionResult Index()
     {
-      List<Vendor> allVendors = Vendor.GetAll();
-      return View(allVendors);
+        List<Vendor> allVendors = Vendor.GetAll();
+        return View(allVendors);
     }
 
-    [HttpGet("/vendors/new")]
+    [HttpGet("/vendors/New")]
     public ActionResult New()
     {
         return View();
@@ -46,11 +46,10 @@ namespace PierresTracker.Controllers
         Vendor foundVendor = Vendor.Find(vendorId);
         Order newOrder = new Order(orderDescription);
         foundVendor.AddOrder(newOrder);
-        List<Order> vendorOrders = foundVendor.Order;
+        List<Order> vendorOrders = foundVendor.Orders;
         model.Add("orders", vendorOrders);
         model.Add("vendor", foundVendor);
         return View("Show", model);
     }
-
-  }
+}
 }

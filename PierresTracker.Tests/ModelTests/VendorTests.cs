@@ -60,7 +60,7 @@ namespace PierresTracker.Tests
             Vendor result = Vendor.Find(1);
             Assert.AreEqual(newVendor1, result);
         }
-       
+
         [TestMethod]
         public void AddOrder_AssociatesOrderWithVendor_OrderList()
         {
@@ -73,6 +73,5 @@ namespace PierresTracker.Tests
             List<Order> result = newVendor.Orders;
             CollectionAssert.AreEqual(newList, result);
         }
-
     }
 }

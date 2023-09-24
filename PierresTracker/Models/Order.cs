@@ -11,24 +11,24 @@ namespace PierresTracker.Models
 
         public Order(string description)
         {
-        Description = description;
-        _instances.Add(this);
-        Id = _instances.Count;
+            Description = description;
+            _instances.Add(this);
+            Id = _instances.Count;
         }
 
         public static List<Order> GetAll()
         {
-        return _instances;
+            return _instances;
         }
 
         public static void ClearAll()
         {
-        _instances.Clear();
+            _instances.Clear();
         }
 
         public static Order Find(int searchId)
         {
-        return _instances[searchId-1];
+            return _instances[searchId-1];
         }
 
 
