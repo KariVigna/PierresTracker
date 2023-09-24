@@ -5,7 +5,7 @@ using PierresTracker.Models;
 
 namespace PierresTracker.Controllers
 {
-public class VendorController : Controller
+public class VendorsController : Controller
 {
 
     [HttpGet("/vendors")]
@@ -15,7 +15,7 @@ public class VendorController : Controller
         return View(allVendors);
     }
 
-    [HttpGet("/vendors/New")]
+    [HttpGet("/vendors/new")]
     public ActionResult New()
     {
         return View();
@@ -39,7 +39,7 @@ public class VendorController : Controller
         return View(model);
     }
 
-    [HttpPost("/vendors/{vendorsId}/orders")]
+    [HttpPost("/vendors/{vendorId}/orders")]
     public ActionResult Create(int vendorId, string orderDescription)
     {
         Dictionary<string, object> model = new Dictionary<string, object>();
