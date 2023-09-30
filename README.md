@@ -3,7 +3,7 @@
 
 #### By _Kari Vigna_
 
-#### _This is a console application for tracking vendors and their orders._
+#### _This is an application for tracking vendors and their orders._
 
 ## Technologies Used
 
@@ -13,7 +13,7 @@
 
 ## Description
 
-_This console-interface allows the user to track orders belonging to each vendor._
+_This application allows the user to track orders belonging to each vendor._
 
 ## Setup/Installation Requirements
 

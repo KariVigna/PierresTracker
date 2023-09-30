@@ -10,17 +10,18 @@
         crossorigin="anonymous">
     </head>
     <body>
-        @using PierresTracker.Models;
-        <h1>Add a vendor</h1>
-        <p>Add a vendor here:</p>
+        <center>
+            @using PierresTracker.Models;
+            <h1>Add a New Vendor!</h1>
 
-        <form action="/vendors" method="post">
-        <label for="vendorName">Vendor name</label>
-        <input id="vendorName" name="vendorName" type="text">
-        <button type="submit">Add</button>
-        </form>
+            <form action="/vendors" method="post">
+            <label for="vendorName">Vendor name</label>
+            <input id="vendorName" name="vendorName" type="text" required>
+            <button type="submit">Add</button>
+            </form>
 
-        <p><a href="/">Back home</a></p>
-        <p><a href="/vendors">Back to all vendors.</a></p>
+            <a href="/">Back home</a><br>
+            <a href="/vendors">Back to all vendors.</a>
+        </center>
     </body>
 </html>

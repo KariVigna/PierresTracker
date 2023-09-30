@@ -7,15 +7,15 @@ namespace PierresTracker.Models
     {
         public string Description { get; set; }
         public int Id { get; }
+        public int Qty { get; set; }
         private static List<Order> _instances = new List<Order> { };
-        public int Total { get; set; }
 
-        public Order(string description)
+        public Order(string description, int qty)
         {
             Description = description;
+            Qty = qty;
             _instances.Add(this);
             Id = _instances.Count;
-            // Total = total;
         }
 
         public static List<Order> GetAll()
